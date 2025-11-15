@@ -1,6 +1,6 @@
 import Foundation
-import Core
-import Providers
+import SwiftEmailCore
+import SwiftEmailProviders
 
 /// Example usage of SwiftEmail SDK
 @main

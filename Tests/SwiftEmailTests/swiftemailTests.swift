@@ -1,8 +1,8 @@
 import Testing
 import Foundation
-@testable import Core
-@testable import Providers
-@testable import Testing
+@testable import SwiftEmailCore
+@testable import SwiftEmailProviders
+@testable import SwiftEmailTesting
 
 @Test("Email address validation works correctly")
 func testEmailAddressValidation() {

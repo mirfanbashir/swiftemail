@@ -10,34 +10,34 @@ let package = Package(
     products: [
         .library(
             name: "SwiftEmail",
-            targets: ["Core", "Providers", "Testing"]
+            targets: ["SwiftEmailCore", "SwiftEmailProviders", "SwiftEmailTesting"]
         ),
     ],
     targets: [
         // Core module with fundamental types and protocols
         .target(
-            name: "Core",
-            path: "Sources/Core"
+            name: "SwiftEmailCore",
+            path: "Sources/SwiftEmailCore"
         ),
         
         // Providers module with email service implementations
         .target(
-            name: "Providers",
-            dependencies: ["Core"],
-            path: "Sources/Providers"
+            name: "SwiftEmailProviders",
+            dependencies: ["SwiftEmailCore"],
+            path: "Sources/SwiftEmailProviders"
         ),
         
         // Testing utilities
         .target(
-            name: "Testing",
-            dependencies: ["Core"],
-            path: "Sources/Testing"
+            name: "SwiftEmailTesting",
+            dependencies: ["SwiftEmailCore"],
+            path: "Sources/SwiftEmailTesting"
         ),
         
         // Tests
         .testTarget(
             name: "SwiftEmailTests",
-            dependencies: ["Core", "Providers", "Testing"],
+            dependencies: ["SwiftEmailCore", "SwiftEmailProviders", "SwiftEmailTesting"],
             path: "Tests/SwiftEmailTests"
         ),
     ]

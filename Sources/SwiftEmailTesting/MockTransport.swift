@@ -1,5 +1,5 @@
 import Foundation
-@testable import Core
+@testable import SwiftEmailCore
 
 /// Mock transport for testing email functionality
 public actor MockTransport: Transport {

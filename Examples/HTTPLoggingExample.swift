@@ -1,6 +1,6 @@
 import Foundation
-import Core
-import Providers
+import SwiftEmailCore
+import SwiftEmailProviders
 
 /// Example demonstrating HTTP request/response logging
 func exampleHTTPLogging() async throws {

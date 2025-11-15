@@ -42,8 +42,8 @@ Then add it to your target dependencies:
 ### Basic Email with Amazon SES
 
 ```swift
-import Core
-import Providers
+import SwiftEmailCore
+import SwiftEmailProviders
 
 // Configure SES
 let config = SESConfig(
