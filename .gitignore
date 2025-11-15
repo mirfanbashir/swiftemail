@@ -11,6 +11,8 @@ xcuserdata/
 DerivedData/
 .swiftpm/
 .netrc
+docs/
+agents.md
 
 ## Obj-C/Swift specific
 *.hmap

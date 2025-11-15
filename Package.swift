@@ -4,18 +4,41 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftEmail",
+    platforms: [
+        .macOS(.v13)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "SwiftEmail",
-            targets: ["SwiftEmail"]),
+            targets: ["Core", "Providers", "Testing"]
+        ),
     ],
     targets: [
+        // Core module with fundamental types and protocols
         .target(
-            name: "SwiftEmail"),
+            name: "Core",
+            path: "Sources/Core"
+        ),
+        
+        // Providers module with email service implementations
+        .target(
+            name: "Providers",
+            dependencies: ["Core"],
+            path: "Sources/Providers"
+        ),
+        
+        // Testing utilities
+        .target(
+            name: "Testing",
+            dependencies: ["Core"],
+            path: "Sources/Testing"
+        ),
+        
+        // Tests
         .testTarget(
             name: "SwiftEmailTests",
-            dependencies: ["SwiftEmail"]
+            dependencies: ["Core", "Providers", "Testing"],
+            path: "Tests/SwiftEmailTests"
         ),
     ]
 )
