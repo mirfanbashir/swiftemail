@@ -1,5 +1,5 @@
 import Foundation
-@testable import SwiftEmailCore
+import SwiftEmailCore
 
 #if canImport(FoundationNetworking)
 import FoundationNetworking

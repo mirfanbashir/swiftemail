@@ -244,7 +244,7 @@ Example output with verbose logging:
 SwiftEmail includes a `MockTransport` for easy testing:
 
 ```swift
-import Testing
+import SwiftEmailMocks
 
 let mockTransport = MockTransport(behavior: .success)
 let client = SimpleEmailClient(transport: mockTransport)
@@ -254,7 +254,7 @@ let response = try await client.send(testMessage, params: nil, context: nil)
 
 // Verify
 let sentMessage = await mockTransport.getLastMessage()
-#expect(sentMessage?.subject == "Expected Subject")
+assert(sentMessage?.subject == "Expected Subject")
 ```
 
 ### Mock Behaviors
