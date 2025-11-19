@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "SwiftEmail",
-            targets: ["SwiftEmailCore", "SwiftEmailProviders", "SwiftEmailTesting"]
+            targets: ["SwiftEmailCore", "SwiftEmailProviders", "SwiftEmailMocks"]
         ),
     ],
     targets: [
@@ -29,16 +29,15 @@ let package = Package(
         
         // Testing utilities
         .target(
-            name: "SwiftEmailTesting",
+            name: "SwiftEmailMocks",
             dependencies: ["SwiftEmailCore"],
-            path: "Sources/SwiftEmailTesting"
+            path: "Sources/SwiftEmailMocks"
         ),
         
         // Tests
         .testTarget(
             name: "SwiftEmailTests",
-            dependencies: ["SwiftEmailCore", "SwiftEmailProviders", "SwiftEmailTesting"],
-            path: "Tests/SwiftEmailTests"
+            dependencies: ["SwiftEmailCore", "SwiftEmailProviders", "SwiftEmailMocks"]
         ),
     ]
 )
